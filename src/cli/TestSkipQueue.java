@@ -51,11 +51,11 @@ public class TestSkipQueue {
 
                 }//所有的MR测试完毕
             }//执行了所有规定的重复次数
-            //计算变异得分
-            mutationScore.calculateMutationScore(SUTName[j]);
-            MutantBeKilledInfo.change(SUTName[j]);
-            MRkilledInfo mRkilledInfo = new MRkilledInfo();
-            mRkilledInfo.parseMutantBeKilledInfo("SkipQueue",TestSimpleLinear.loops);
         }//所有的SUT测试完毕
+        //计算变异得分
+        mutationScore.calculateMutationScore("SkipQueue");
+        MutantBeKilledInfo.change("SkipQueue");
+        MRkilledInfo mRkilledInfo = new MRkilledInfo();
+        mRkilledInfo.parseMutantBeKilledInfo("SkipQueue",TestSimpleLinear.loops);
     }
 }

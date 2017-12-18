@@ -49,12 +49,12 @@ public class TestSimpleLinear {
 
                 }//所有的MR测试完毕
             }//执行了所有规定的重复次数
-            //计算变异得分
-            mutationScore.calculateMutationScore(SUTName[j]);
-            MutantBeKilledInfo.change(SUTName[j]);
-            MRkilledInfo mRkilledInfo = new MRkilledInfo();
-            mRkilledInfo.parseMutantBeKilledInfo("SimpleLinear",TestSimpleLinear.loops);
         }//所有的SUT测试完毕
+        //计算变异得分
+        mutationScore.calculateMutationScore("SimpleLinear");
+        MutantBeKilledInfo.change("SimpleLinear");
+        MRkilledInfo mRkilledInfo = new MRkilledInfo();
+        mRkilledInfo.parseMutantBeKilledInfo("SimpleLinear",TestSimpleLinear.loops);
     }
 
 }
