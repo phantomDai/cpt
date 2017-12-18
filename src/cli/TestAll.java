@@ -22,7 +22,7 @@ public class TestAll {
         for (int i = 0; i < SUTName.length; i++) {
             LogRecorder.creatTableAndTitle(SUTName[i]);
         }
-        MutationScore mutationScore = new MutationScore();
+
         for (int j = 0; j < SUTName.length; j++) {//对所有的SUT进行测试
             for (int i = 0; i < TestSimpleLinear.loops; i++) {//控制重复实验的次数
                 //获得所有的蜕变关系
@@ -51,11 +51,6 @@ public class TestAll {
 
                 }//所有的MR测试完毕
             }//执行了所有规定的重复次数
-            //计算变异得分
-            mutationScore.calculateMutationScore(SUTName[j]);
-            MutantBeKilledInfo.change(SUTName[j]);
-            MRkilledInfo mRkilledInfo = new MRkilledInfo();
-            mRkilledInfo.parseMutantBeKilledInfo(SUTName[j],TestSimpleLinear.loops);
         }//所有的SUT测试完毕
     }
 }
