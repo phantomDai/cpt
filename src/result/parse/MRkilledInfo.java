@@ -36,9 +36,10 @@ public class MRkilledInfo {
 
         //逐个遍历SUT下的所有mutantBeKilledInfo_XX.txt提取相关信息
         for (int i = 0; i < loops; i++) {
-            String path = System.getProperty("user.dir") + separator+"logfile"+separator + "mutantBeKilledInfo_" +
-                    SUTname + String.valueOf(i) + ".txt" ;
+            String str = "mutantBekilledInfo_" + SUTname + String.valueOf(i) + ".txt";
+            String path = System.getProperty("user.dir") + separator+"logfile"+separator + str;
             File file = new File(path);
+            System.out.println(file.isFile());
             if(!file.exists()){
                 System.out.println("找不到指定的文件");
             }

@@ -40,7 +40,7 @@ public class MutantBeKilledInfo {
             bufferedReader.close();
             //写入文件
             PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(path)));
-            String tempstr = new String(stringBuffer.toString().getBytes("GB18030"),"GB18030");
+            String tempstr = new String(stringBuffer.toString().getBytes("UTF-8"),"UTF-8");
             printWriter.write(tempstr);
             printWriter.flush();
             printWriter.close();
