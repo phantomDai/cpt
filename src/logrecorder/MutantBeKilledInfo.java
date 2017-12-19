@@ -40,13 +40,10 @@ public class MutantBeKilledInfo {
             bufferedReader.close();
             //写入文件
             PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(path)));
-            printWriter.write(stringBuffer.toString());
+            String tempstr = new String(stringBuffer.toString().getBytes("GB18030"),"GB18030");
+            printWriter.write(tempstr);
             printWriter.flush();
             printWriter.close();
-
-
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

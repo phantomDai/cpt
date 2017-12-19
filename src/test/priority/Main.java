@@ -2,14 +2,12 @@ package test.priority;
 
 import logrecorder.LogRecorder;
 import metamorphic.relations.MRSet;
-import result.paeser.MutantBeKilledInfo;
-import result.paeser.MutationScore;
+import result.parse.MutantBeKilledInfo;
+import result.parse.MutationScore;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 测试的主类，运行该程序进行测试

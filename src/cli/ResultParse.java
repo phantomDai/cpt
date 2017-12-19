@@ -1,8 +1,8 @@
 package cli;
 
-import result.paeser.MRkilledInfo;
-import result.paeser.MutantBeKilledInfo;
-import result.paeser.MutationScore;
+import result.parse.MRkilledInfo;
+import result.parse.MutantBeKilledInfo;
+import result.parse.MutationScore;
 
 /**
  * @author phantom

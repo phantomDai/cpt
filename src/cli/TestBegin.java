@@ -2,9 +2,8 @@ package cli;
 
 import logrecorder.LogRecorder;
 import metamorphic.relations.MRSet;
-import result.paeser.MutantBeKilledInfo;
-import result.paeser.MutationScore;
-import test.priority.Main;
+import result.parse.MutantBeKilledInfo;
+import result.parse.MutationScore;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
