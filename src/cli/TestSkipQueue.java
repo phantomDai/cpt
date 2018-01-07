@@ -22,6 +22,7 @@ public class TestSkipQueue {
         for (int i = 0; i < SUTName.length; i++) {
             LogRecorder.creatTableAndTitle(SUTName[i]);
         }
+        MutationScore mutationScore = new MutationScore();
         for (int j = 0; j < SUTName.length; j++) {//对所有的SUT进行测试
             for (int i = 0; i < TestSimpleLinear.loops; i++) {//控制重复实验的次数
                 //获得所有的蜕变关系
@@ -50,7 +51,7 @@ public class TestSkipQueue {
 
                 }//所有的MR测试完毕
             }//执行了所有规定的重复次数
-            MutationScore mutationScore = new MutationScore();
+            //计算变异得分
             mutationScore.calculateMutationScore("SkipQueue");
             MutantBeKilledInfo.change("SkipQueue");
             MRkilledInfo mRkilledInfo = new MRkilledInfo();
