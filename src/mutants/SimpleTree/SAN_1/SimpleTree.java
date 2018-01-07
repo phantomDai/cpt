@@ -70,6 +70,7 @@ public class SimpleTree<T> implements PQueue<T> {
 		node.counter.set(node.counter.get() - 1);
 		node = node.left;
       } else {
+        node.counter.set(node.counter.get() - 1);
         node = node.right;
       }
     }

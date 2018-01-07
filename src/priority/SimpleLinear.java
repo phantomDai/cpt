@@ -34,27 +34,13 @@ public class SimpleLinear<T> implements PQueue<T> {
      */
     @Override
     public T removeMin() {
-        for (int i = 0; i < --range; i++) {
+        for (int i = 0; i < range; i++) {
             T item = pqueue[i].get() ;
             if(item != null){
                 return item ;
             }
         }
         return null ;
-    }
-
-    public static void main(String[] args) {
-        Random random = new Random(1);
-        int[] test = new int[1024];
-        for (int i = 0; i < 1024; i++) {
-            test[i] = random.nextInt(1024);
-        }
-        SimpleLinear simpleLinear = new SimpleLinear(1024);
-        for (int i = 0; i < 1024; i++) {
-            simpleLinear.add(test[i],test[i]);
-        }
-        System.out.println(simpleLinear.removeMin());
-
     }
 
 }

@@ -137,7 +137,7 @@ public final class PrioritySkipList<T> implements Iterable<T> {
         }
       }
     }
-    return null; // no unmarked nodes
+    return null;
   }
   
   /**

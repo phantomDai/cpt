@@ -52,11 +52,12 @@ public class TestSequentialHeap {
                 }//所有的MR测试完毕
             }//执行了所有规定的重复次数
             //计算变异得分
+            mutationScore.calculateMutationScore("SequentialHeap");
+            MutantBeKilledInfo.change("SequentialHeap");
+            MRkilledInfo mRkilledInfo = new MRkilledInfo();
+            mRkilledInfo.parseMutantBeKilledInfo("SequentialHeap",TestSimpleLinear.loops);
         }//所有的SUT测试完毕
-        mutationScore.calculateMutationScore("SequentialHeap");
-        MutantBeKilledInfo.change("SequentialHeap");
-        MRkilledInfo mRkilledInfo = new MRkilledInfo();
-        mRkilledInfo.parseMutantBeKilledInfo("SequentialHeap",TestSimpleLinear.loops);
+
     }
 
 }

@@ -96,12 +96,12 @@ public class FineGrainedHeap<T> implements PQueue<T> {
     heapLock.lock();
     int bottom = --next;
 	heap[bottom].lock();
-	heap[ROOT].lock();
+    heap[bottom].lock();
     
     heapLock.unlock();
     if (heap[ROOT].tag == Status.EMPTY) {
       heap[ROOT].unlock();
-      heap[bottom].lock();
+      heap[ROOT].lock();
       return null;
     }
     T item = heap[ROOT].item;

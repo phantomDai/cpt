@@ -147,15 +147,13 @@ public final class PrioritySkipList<T> implements Iterable<T> {
         while (curr != tail) {
             if (!curr.marked.get()) {
                 if (curr.marked.compareAndSet(false, true)) {
-//                if (curr.marked.get() == false){
-//                    curr.marked.set(true);
                     return curr;
                 } else {
                     curr = curr.next[0].getReference();
                 }
             }
         }
-        return null; // no unmarked nodes
+        return null;
     }
 
     /**

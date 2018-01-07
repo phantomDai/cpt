@@ -55,7 +55,7 @@ public class SequentialHeap<T> implements PQueue<T> {
      * Returns and removes least item in heap.
      * @return least item.
      */
-    public T removeMin() {
+    synchronized public T removeMin() {
         int bottom = --next;
         T item = heap[ROOT].item;
         swap(ROOT, bottom);
