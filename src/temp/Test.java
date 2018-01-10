@@ -1,6 +1,8 @@
 package temp;
 
 import java.io.*;
+import java.util.HashSet;
+import java.util.Set;
 
 import static java.io.File.separator;
 
@@ -31,7 +33,11 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        Test test = new Test();
-        test.test();
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        if (set.contains("1"))
+            set.remove("1");
+        System.out.println(set.size());
     }
 }

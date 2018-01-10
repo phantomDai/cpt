@@ -205,7 +205,7 @@ public class MRkilledInfo {
 
     public void paeserMutantBeKilledInfo(){
 
-        String[] SUTName = {"SimpleLinear", "SimpleTree", "SequentialHeap", "SkipQueue","FineGrainedHeap.txt"};
+        String[] SUTName = {"SimpleLinear", "SimpleTree", "SequentialHeap", "SkipQueue","FineGrainedHeap"};
 //        String[] SUTName = {"SimpleLinear"};
         //接下里将所有的记录汇总
         BinListMutant[] binlist = new BinListMutant[27];

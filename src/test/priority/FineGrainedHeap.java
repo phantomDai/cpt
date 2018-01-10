@@ -74,7 +74,7 @@ public class FineGrainedHeap {
                 }
                 for (int i = 0; i < THREADS; i++) {
                     try{
-                        thread[i].join(1000);//设置超时时间为10s
+                        thread[i].join(100);//设置超时时间为1s
                         if (thread[i].isAlive()){
                             for (int k = 0; k < THREADS; k++) {
                                 thread[k].cancel();

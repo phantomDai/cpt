@@ -111,13 +111,13 @@ public class MR8 implements MetamorphicRelations {
                     method.invoke(instance_follow, follow, ms.getMutantFullName(j));
                     int[] getlisttwo = (int[]) get.invoke(instance_follow, null);//获得衍生最优序列
 
-//                    for (int k = 0; k < getlist.length; k++) {
-//                        System.out.print(getlist[k]+",");
-//                    }
-//                    System.out.println();
-//                    for (int k = 0; k < getlisttwo.length; k++) {
-//                        System.out.print(getlisttwo[k]+",");
-//                    }
+                    for (int k = 0; k < getlist.length; k++) {
+                        System.out.print(getlist[k]+",");
+                    }
+                    System.out.println();
+                    for (int k = 0; k < getlisttwo.length; k++) {
+                        System.out.print(getlisttwo[k]+",");
+                    }
 
 
                     long endTime = System.currentTimeMillis();
@@ -271,19 +271,11 @@ public class MR8 implements MetamorphicRelations {
 
     public static void main(String[] args) {
         MR8 mr = new MR8();
-        LogRecorder.creatTableAndTitle("SkipQueue.txt");
+        LogRecorder.creatTableAndTitle("FineGrainedHeap");
         for (int i = 0; i < 1; i++) {
-            mr.testProgram("SkipQueue",i);
+            mr.testProgram("FineGrainedHeap",i);
         }
-//        int[] mylist = {17,18,19,20,21,22,23,24,25,26,27,28,29,30};
-//        int[] toplist = {17,18,19,20,21,22,23,24,25,26};
-//        int[] follow = mr.followUpList(mylist,toplist);
-//        System.out.println("\rfollow:");
-//        for (int i = 0; i < follow.length; i++) {
-//            System.out.print(follow[i] + ",");
-//        }
-
-
+        System.exit(0);
 
     }
 

@@ -5,6 +5,7 @@ import metamorphic.relations.MRSet;
 import result.parse.MRkilledInfo;
 import result.parse.MutantBeKilledInfo;
 import result.parse.MutationScore;
+import result.parse.ParseCategory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -54,10 +55,10 @@ public class TestFineGrainedHeap {
             //计算变异得分
             mutationScore.calculateMutationScore("FineGrainedHeap");
             MutantBeKilledInfo.change("FineGrainedHeap");
-            MRkilledInfo mRkilledInfo = new MRkilledInfo();
-            mRkilledInfo.parseMutantBeKilledInfo("FineGrainedHeap",TestSimpleLinear.loops);
+            ParseCategory parseCategory = new ParseCategory();
+            parseCategory.parseCategory("FineGrainedHeap");
         }//所有的SUT测试完毕
-
+        System.exit(0);
     }
 
 }

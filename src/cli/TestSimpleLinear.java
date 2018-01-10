@@ -5,6 +5,7 @@ import metamorphic.relations.MRSet;
 import result.parse.MRkilledInfo;
 import result.parse.MutantBeKilledInfo;
 import result.parse.MutationScore;
+import result.parse.ParseCategory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -52,8 +53,8 @@ public class TestSimpleLinear {
             //计算变异得分
             mutationScore.calculateMutationScore("SimpleLinear");
             MutantBeKilledInfo.change("SimpleLinear");
-            MRkilledInfo mRkilledInfo = new MRkilledInfo();
-            mRkilledInfo.parseMutantBeKilledInfo("SimpleLinear",TestSimpleLinear.loops);
+            ParseCategory parseCategory = new ParseCategory();
+            parseCategory.parseCategory("SimpleLinear");
         }//所有的SUT测试完毕
     }
 
