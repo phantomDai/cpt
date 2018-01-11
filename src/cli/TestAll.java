@@ -49,5 +49,6 @@ public class TestAll {
                 }//所有的MR测试完毕
             }//执行了所有规定的重复次数
         }//所有的SUT测试完毕
+        System.exit(0);//执行完所有测试后停止
     }
 }

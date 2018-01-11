@@ -272,7 +272,7 @@ public class ParseCategory {
             String[] SimpleLinear = {"4","4","2","0","3","0","1","0"};
             String[] SimpleTree = {"3","7","3","0","14","1","0","0"};
             String[] SequentialHeap = {"92","37","11","14","33","0","2","0"};
-            String[] FineGrainedHeap = {"44","24","15","11","30","13","0","7"};
+            String[] FineGrainedHeap = {"44","24","15","11","30","13","0","5"};
             String[] SkipQueue = {"2","6","4","2","5","1","0","0"};
 
             //逐列添加数据
@@ -598,7 +598,7 @@ public class ParseCategory {
 
     public static void main(String[] args) {
         ParseCategory parseCategory = new ParseCategory();
-        parseCategory.parseCategory("SequentialHeap");
+        parseCategory.parseCategory("FineGrainedHeap");
     }
 
 }

@@ -25,7 +25,7 @@ public class TestFineGrainedHeap {
         }
         MutationScore mutationScore = new MutationScore();
         for (int j = 0; j < SUTName.length; j++) {//对所有的SUT进行测试
-            for (int i = 0; i < TestSimpleLinear.loops; i++) {//控制重复实验的次数
+            for (int i = 7; i < TestSimpleLinear.loops; i++) {//控制重复实验的次数
                 //获得所有的蜕变关系
                 MRSet mrSet = new MRSet();
                 System.out.println(mrSet.getFullMRName(j));
