@@ -57,7 +57,7 @@ public class MR18_1 implements MetamorphicRelations {
                     Constructor constructor = clazz.getConstructor(int.class);
                     Object instance = constructor.newInstance(threads);
                     Object instance_follow = constructor.newInstance(threads+1);
-                    Method method = clazz.getMethod("testRemoveMin", int[].class, String.class);
+                    Method method = clazz.getMethod("sequenceTestRemoveMin", int[].class, String.class);
                     //~~~~~~~~~~~~~~~~~~原始序列~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
                     Random random = new Random(i+1);
                     int[] temp = new int[NUMBEROFELEMENT];

@@ -25,6 +25,55 @@ public class SkipQueue {
     }
 
     /**
+     * 单线程的移除程序中的变异体
+     * @param list 序列
+     * @param mymutantFullName 变异的全名
+     */
+    public void sequenceTestRemoveMin(int[] list,String mymutantFullName){
+        try{
+            vector.clear();
+            clazz = Class.forName(mymutantFullName);
+            constructor = clazz.getConstructor(null) ;
+
+            mutantInstance = constructor.newInstance(null);
+            Method method_add = clazz.getMethod(METHODNAME_ADD,Object.class,int.class);
+            //向变异体对象中添加元素
+
+            for (int i = 0; i < list.length; i++) {
+                method_add.invoke(mutantInstance,list[i],list[i]);
+            }
+            //单线程移除优先级最高的十个元素
+            /*初始化移除元素的方法*/
+            method_remove = clazz.getMethod(METHODNAME_REMOVEMIN,null);
+            for (int i = 0; i < THREADS; i++) {
+                boolean flag = false;//标志位
+                while(!flag){
+                    try{
+                        Object result = method_remove.invoke(mutantInstance,null);
+                        flag = addElements(result);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
      *
      * Method: removeMin()
      *

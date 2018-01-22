@@ -59,7 +59,7 @@ public class MR18_2 implements MetamorphicRelations {
                     Random ran = new Random();
                     int tempthread = ran.nextInt(9)+12;
                     Object instance_follow = constructor.newInstance(tempthread);
-                    Method method = clazz.getMethod("testRemoveMin", int[].class, String.class);
+                    Method method = clazz.getMethod("sequenceTestRemoveMin", int[].class, String.class);
                     //~~~~~~~~~~~~~~~~~~原始序列~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
                     Random random = new Random(i+1);
                     int[] temp = new int[NUMBEROFELEMENT];

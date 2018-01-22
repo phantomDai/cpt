@@ -31,8 +31,59 @@ public class SimpleLinear {
         thread = new Thread[mythreads];
     }
 
+
     /**
-     * 测试removeMin方法
+     * 顺序的移除序列中的元素
+     * @param list 输入的数据
+     * @param mymutantFullName 要测试的变异的全名：包名+程序名
+     */
+    public void sequenceTestRemoveMin(int[] list,String mymutantFullName){
+        try{
+            vector.clear();
+            clazz = Class.forName(mymutantFullName);
+            constructor = clazz.getConstructor(int.class) ;
+            Arrays.sort(list);
+
+            mutantInstance = constructor.newInstance(10240);
+            //向序列中添加元素的方法
+            method_add = clazz.getMethod(METHODNAME_ADD,Object.class,int.class);
+
+            //向变异体对象中添加元素
+            for (int i = 0; i < list.length; i++) {
+                method_add.invoke(mutantInstance,list[i],list[i]);
+            }
+            //单线程移除优先级最高的十个元素
+            /*初始化移除元素的方法*/
+            method_remove = clazz.getMethod(METHODNAME_REMOVEMIN,null);
+            for (int i = 0; i < THREADS; i++) {
+                boolean flag = false;//标志位
+                while(!flag){
+                    try{
+                        Object result = method_remove.invoke(mutantInstance,null);
+                        flag = addElements(result);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 并发的测试removeMin方法
      * @param list 传入的测试的序列
      * @param mymutantFullName 变异体的全名：包名+程序名
      */

@@ -101,5 +101,29 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/HOMEJAR/excel/jxl.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/HOMEJAR/commons-lang3-3.6/commons-lang3-3.6-tests.jar!/" />
+          <root url="jar://D:/HOMEJAR/commons-lang3-3.6/commons-lang3-3.6.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://D:/HOMEJAR/commons-lang3-3.6/commons-lang3-3.6-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://D:/HOMEJAR/commons-lang3-3.6/commons-lang3-3.6-sources.jar!/" />
+          <root url="jar://D:/HOMEJAR/commons-lang3-3.6/commons-lang3-3.6-test-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

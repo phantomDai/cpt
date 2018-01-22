@@ -35,6 +35,67 @@ public class FineGrainedHeap {
         thread = new RemoveMinThread[mythreads];
     }
 
+    /**
+     * 单线程的移除序列中的变异体
+     * @param list 序列
+     * @param mymutantFullName 变异体的全名
+     */
+    public void sequenceTestRemoveMin(int[] list,String mymutantFullName){
+        String[] names = mymutantFullName.split("\\.");
+        String tempname = names[2];
+        if ((tempname.equals("ELPA_1")) || ((tempname.equals("ELPA_2")))){
+            for (int i = 0; i < THREADS; i++) {
+                vector.add(ran.nextInt(824));
+            }
+        }else {
+            try{
+                vector.clear();
+                clazz = Class.forName(mymutantFullName);
+                constructor = clazz.getConstructor(int.class) ;
+                if (list.length<1024){
+                    mutantInstance = constructor.newInstance(1024);
+                }else {
+                    mutantInstance = constructor.newInstance(list.length);
+                }
+
+                method_add = clazz.getMethod(METHODNAME_ADD,Object.class,int.class);
+                //向变异体对象中添加元素
+                method_remove = clazz.getMethod(METHODNAME_REMOVEMIN,null);
+                for (int i = 0; i < list.length; i++) {
+                    method_add.invoke(mutantInstance,list[i],list[i]);
+                }
+                //多线程移除优先级最高的十个元素
+                for (int i = 0; i < THREADS; i++) {
+                    boolean flag = false;//标志位
+                    while(!flag){
+                        try{
+                            Object result = method_remove.invoke(mutantInstance,null);
+                            flag = addElements(result);
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+    }
 
     /**
      *
